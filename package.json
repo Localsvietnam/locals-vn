@@ -1,0 +1,26 @@
+{
+  "name": "locals-vn",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev": "npm run dev --workspace=frontend & npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:backend:simple": "npm run dev:simple --workspace=backend",
+    "build": "npm run build --workspace=frontend && npm run build --workspace=backend",
+    "start:frontend": "npm run start --workspace=frontend",
+    "start:backend": "npm run start --workspace=backend",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "check": "powershell -ExecutionPolicy Bypass -File scripts/check.ps1",
+    "optimize": "powershell -ExecutionPolicy Bypass -File scripts/optimize-for-production.ps1",
+    "start-all": "powershell -ExecutionPolicy Bypass -File scripts/start-all.ps1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^2.0.0",
+    "typescript": "^4.0.0"
+  }
+}
